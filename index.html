@@ -2,54 +2,65 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Academlo store</title>
-  <!-- favicon -->
-  <link rel="shortcut icon" href="./src/assets/logo_blanco.png" type="image/x-icon">
-  <!-- meta, tarea para el grupo -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academlo store</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./src/assets/logo_blanco.png" type="image/x-icon">
+    <!-- meta, tarea para el grupo -->
 
-  <!-- font family  -->
-  <link href="https://fonts.cdnfonts.com/css/helvetica-neue-55" rel="stylesheet">
+    <!-- font family  -->
+    <link href="https://fonts.cdnfonts.com/css/helvetica-neue-55" rel="stylesheet">
 
-  <!-- icons -->
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-  <!-- stylesheet -->
-  <link rel="stylesheet" href="./src/primary-styles/reset.css">
-  <link rel="stylesheet" href="./src/components/nav/nav.css">
-  <link rel="stylesheet" href="./src/components/header/header.css">
-  <link rel="stylesheet" href="./src/primary-styles/body.css">
-  <link rel="stylesheet" href="./src/primary-styles/articleApi.css">
-  <link rel="stylesheet" href="./src/components/ulApi/ulApi.css">
-
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="./src/primary-styles/reset.css">
+    <link rel="stylesheet" href="./src/components/nav/nav.css">
+    <link rel="stylesheet" href="./src/components/header/header.css">
+    <link rel="stylesheet" href="./src/primary-styles/body.css">
+    <link rel="stylesheet" href="./src/primary-styles/articleApi.css">
+    <link rel="stylesheet" href="./src/components/ulApi/ulApi.css">
+    <link rel="stylesheet" href="./src/components/cart/cart.css">
 </head>
 
 <body class="body" id="home">
-  <nav id="nav" class="body__nav nav">
-    <!-- Aqui insertamos el nav -->
-  </nav>
+    <nav id="nav" class="body__nav nav">
 
-  <main class="body__main main">
-    <header id="header" class="main__header header">
-      <!-- Aqui insertamos el header -->
-    </header>
+    </nav>
 
-    <section class="main__section section">
+    <main class="body__main main">
+        <header id="header" class="main__header header">
 
-      <article class="section__article--api article">
-        <h2 class="article__h2">Todos nuestros productos</h2>
+        </header>
 
-        <ul id="ul__api" class="article__ul \">
-          <!-- aca va el contenido de la API -->
-        </ul>
+        <section class="main__section section">
 
-      </article>
+            <article class="section__article--api article">
+                <h2 class="article__h2">Todos nuestros productos</h2>
 
-    </section>
-  </main>
+                <ul id="ul__api" class="article__ul \">
 
-  <script type="module" src="./main.js"></script>
+                </ul>
+
+            </article>
+
+        </section>
+        <section id="menu_cart" class="main__section--cart section">
+            <i class='bx bxs-plus-circle'></i>
+            <h2 class="section__h2">Carrito de Compra</h2>
+            <ul class="section__ul--cart" id="cart_list">
+                <div class="section__div--total">
+                    <h2 class="section__h2--total">SUBTOTAL</h2>
+                    <P class="section__p--total" id="sub_total"></P>
+                </div>
+            </ul>
+
+        </section>
+    </main>
+
+    <script type="module" src="./main.js"></script>
 </body>
 
 </html>

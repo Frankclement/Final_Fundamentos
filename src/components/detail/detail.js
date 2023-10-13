@@ -2,33 +2,33 @@ import localStorageCart from "./localStorageCart.js"
 
 function detail() {
 
-  const params = window.location.search
+    const params = window.location.search
 
-  //obtencion del id
-  const productId = Number(params.split('=')[1]) //5
+    //obtencion del id
+    const productId = Number(params.split('=')[1]) //5
 
-  const sectionDetail = document.querySelector('#section_detail')
+    const sectionDetail = document.querySelector('#section_detail')
 
-  const ul = document.createElement('ul')
-  ul.classList.add('section__ul')
-  ul.classList.add('ul')
+    const ul = document.createElement('ul')
+    ul.classList.add('section__ul')
+    ul.classList.add('ul')
 
-  const li = document.createElement('li')
-  li.classList.add('ul__li--detail')
+    const li = document.createElement('li')
+    li.classList.add('ul__li--detail')
 
-  async function productApi() {
+    async function productApi() {
 
-    const url = 'https://ecommercebackend.fundamentos-29.repl.co/'
+        const url = 'https://ecommercebackend.fundamentos-29.repl.co/'
 
-    const res = await fetch(url)
-    try {
-      const data = await res.json()
+        const res = await fetch(url)
+        try {
+            const data = await res.json()
 
-      for (const product of data) {
-        if (product.id === productId) {
-          console.log(product);
-          li.innerHTML +=
-            `
+            for (const product of data) {
+                if (product.id === productId) {
+                    console.log(product);
+                    li.innerHTML +=
+                        `
             <div class="ul__div--li">
               <h1 class="ul__h1--div">${product.name}</h1>
               <h2 class="ul__h2--div">$${product.price}.00</h2>
@@ -61,58 +61,58 @@ function detail() {
           </figure>
           
           `
-          const divButtonSizes = document.querySelectorAll('.div__button--sizes')
-          //console.log(divButtonSizes); //6 elementos que tienen esa clase
-
-          let size = null
-
-          divButtonSizes.forEach((button) => {
-
-            button.addEventListener(('click'), function () {
-
-              divButtonSizes.forEach((btn) => {
-                btn.classList.remove('div__button--active')
-              })
-
-              button.classList.add('div__button--active')
-              size = button.textContent
-              console.log(size);
-
-            })
-
-          })
-
-          const ulButtonDiv = document.querySelector('.ul__button--div')
-
-          ulButtonDiv.addEventListener(('click'), () => {
-            localStorageCart(size, divButtonSizes, productId, product.name, product.price, product.image)
-            size = null
-          })
+                    const divButtonSizes = document.querySelectorAll('.div__button--sizes')
 
 
+                    let size = null
+
+                    divButtonSizes.forEach((button) => {
+
+                        button.addEventListener(('click'), function() {
+
+                            divButtonSizes.forEach((btn) => {
+                                btn.classList.remove('div__button--active')
+                            })
+
+                            button.classList.add('div__button--active')
+                            size = button.textContent
+                            console.log(size);
+
+                        })
+
+                    })
+
+                    const ulButtonDiv = document.querySelector('.ul__button--div')
+
+                    ulButtonDiv.addEventListener(('click'), () => {
+                        localStorageCart(size, divButtonSizes, productId, product.name, product.price, product.image)
+                        size = null
+                    })
 
 
 
 
 
 
+
+
+                }
+
+            }
+
+
+        } catch (error) {
+            console.log(error);
         }
 
-      }
-
-
-    } catch (error) {
-      console.log(error);
     }
 
-  }
 
 
+    sectionDetail.appendChild(ul)
+    ul.appendChild(li)
 
-  sectionDetail.appendChild(ul)
-  ul.appendChild(li)
-
-  productApi()
+    productApi()
 }
 
 export default detail
