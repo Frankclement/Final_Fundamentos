@@ -4,11 +4,11 @@
     --font-weight-regular: 300;
     --font-weight-medium: 400;
     --font-weight-bold: 500;
-    --background-header: #EB4A5A;
+    --background-header: #BC9626;
     --background-first-section: #F9FAFC;
-    --background-card: #B6B6B6;
-    --text-color-primary: #676B91;
-    --text-color-secondary: #274671;
+    --background-card: #757F78;
+    --text-color-primary: #22375E;
+    --text-color-secondary: #0f6cee;
     /* Reset Styles */
     margin: 0;
     padding: 0;
